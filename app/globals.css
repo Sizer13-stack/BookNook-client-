@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@plugin "daisyui" { themes: booknook --default, nook-night --prefersdark; }
+@plugin "daisyui/theme" {
+  name: "booknook"; default: true; color-scheme: light;
+  --color-base-100: #ffffff; --color-base-200: #f1f4f9; --color-base-300: #dfe5ee; --color-base-content: #16202e;
+  --color-primary: #3b3fd8; --color-primary-content: #ffffff;
+  --color-secondary: #f2b705; --color-secondary-content: #16202e;
+  --color-accent: #0e9f8e; --color-accent-content: #ffffff;
+  --color-neutral: #16202e; --color-neutral-content: #f1f4f9;
+  --color-info: #2f80ed; --color-info-content: #fff; --color-success: #1f9d55; --color-success-content: #fff;
+  --color-warning: #f2b705; --color-warning-content: #16202e; --color-error: #d64545; --color-error-content: #fff;
+  --radius-box: 0.75rem; --radius-field: 0.5rem; --radius-selector: 0.5rem;
+}
+@plugin "daisyui/theme" {
+  name: "nook-night"; prefersdark: true; color-scheme: dark;
+  --color-base-100: #121a2a; --color-base-200: #0d1421; --color-base-300: #243047; --color-base-content: #e6ebf5;
+  --color-primary: #8b8ff5; --color-primary-content: #0d1421;
+  --color-secondary: #f2b705; --color-secondary-content: #0d1421;
+  --color-accent: #35c4b3; --color-accent-content: #0d1421;
+  --color-neutral: #1b2740; --color-neutral-content: #e6ebf5;
+  --color-info: #5aa0f5; --color-info-content: #0d1421; --color-success: #43c77a; --color-success-content: #0d1421;
+  --color-warning: #f2b705; --color-warning-content: #0d1421; --color-error: #ef7070; --color-error-content: #0d1421;
+  --radius-box: 0.75rem; --radius-field: 0.5rem; --radius-selector: 0.5rem;
+}
+@theme inline { --font-sans: var(--font-body); }
+body { font-family: var(--font-body), system-ui, sans-serif; }
+.h-section { font-family: var(--font-head), system-ui, sans-serif; font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+.page { max-width: 72rem; margin-inline: auto; padding: 2.5rem 1rem; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
