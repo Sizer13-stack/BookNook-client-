@@ -25,7 +25,18 @@ export default function Login() {
     toast.success("Welcome back!");
     router.push(getRedirect());
   }
-  const google = () => authClient.signIn.social({ provider: "google", callbackURL: getRedirect() });
+
+  async function google() {
+    try {
+      const { error } = await authClient.signIn.social({
+        provider: "google",
+        callbackURL: `${window.location.origin}${getRedirect()}`,
+      });
+      if (error) toast.error(error.message || "Google sign-in failed. Please try again");
+    } catch (e) {
+      toast.error(e?.message || "Google sign-in failed. Please try again");
+    }
+  }
 
   return (
     <div className="page max-w-md">
